@@ -1,0 +1,32 @@
+{
+    "name": "aporat/php_gearman_daemons",
+    "description": "PHP Gearman Deamon Manager",
+    "keywords": ["gearman", "workers", "queues", "deamons"],
+    "type": "library",
+    "homepage" : "https://github.com/aporat/PHP-GearmanDaemons",
+    "authors": [
+        {
+            "name": "Adar Porat",
+            "email": "adar.porat@gmail.com",
+            "homepage": "http://github.com/aporat"
+        }
+    ],
+	"support": {
+		"email": "adar.porat@gmail.com",
+		"issues": "https://github.com/aporat/PHP-GearmanDaemons/issues"
+	},
+    "require": {
+        "php": ">=5.3"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "3.7.*"
+	},
+	"autoload": {
+        "psr-0": {
+            "GearmanDaemons": "library/"
+        }
+    },
+    "include-path": [
+        "library/"
+    ]
+}
