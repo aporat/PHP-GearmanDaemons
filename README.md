@@ -6,3 +6,6 @@ PHP Gearman Daemons Manager [![Build Status](https://secure.travis-ci.org/aporat
 
 * PHP >= 5.3
 
+
+## Install ##
+

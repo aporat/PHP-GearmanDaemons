@@ -16,7 +16,8 @@
 		"issues": "https://github.com/aporat/PHP-GearmanDaemons/issues"
 	},
     "require": {
-        "php": ">=5.3"
+        "php": ">=5.3",
+        "bombayworks/zendframework1": "v1.12.1"
     },
     "require-dev": {
         "phpunit/phpunit": "3.7.*"
