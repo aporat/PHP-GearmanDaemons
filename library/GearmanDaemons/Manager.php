@@ -3,7 +3,7 @@ namespace GearmanDaemons;
 
 use Zend\Log\Logger;
 use \Zend\Log\Writer;
-use \Zend\Config;
+use \Zend\Config\Config;
 
 /**
  * Base manager class.
@@ -89,10 +89,15 @@ class Manager
         
         $this->_logger->info('Application\Gearman\Manager loaded');
         
-        if ($spec instanceof \Zend\Config\Config) {
+        if ($spec instanceof Config) {
             $options = $spec->toArray();
         } elseif (is_array($spec)) {
             $options = $spec;
+        }
+        
+        // last minute error checking
+        if ((!is_array($options))) {
+            throw new Exception('No valid params passed to constructor');
         }
         
         $this->setOptions($options);

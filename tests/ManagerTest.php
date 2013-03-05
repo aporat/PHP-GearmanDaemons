@@ -1,14 +1,14 @@
 <?php
 use \GearmanDaemons\Manager;
 use \Zend\Log\Writer;
-use \Zend\Config;
+use \Zend\Config\Config;
 
 class GearmanDaemonsManagerTest extends PHPUnit_Framework_TestCase
 {
 	
     public function setUp()
     {
-        $this->options = new \Zend\Config\Config(array(
+        $this->options = new Config(array(
             'recover_workers' => true,
             'servers' =>
              array (
@@ -20,12 +20,23 @@ class GearmanDaemonsManagerTest extends PHPUnit_Framework_TestCase
         $this->worker->getLogger()->addWriter(new Writer\Mock());
     }
     
-    
-    public function testTest()
+    public function testConstruct()
     {
-
-    	// ham shouldn't be marked as profanity
-    	$this->assertFalse(false);
+        try {
+            $manager = new Manager($this->options);
+            $this->assertTrue(true);
+        } catch (Exception $e) {
+            $this->fail('should have gotten a valid object');
+        }
+    
+        // parameter verification
+        try {
+            $manager = new Manager();
+            $this->fail('should have thrown an exception bad queue var');
+        } catch (Exception $e) {
+            $this->assertTrue(true);
+        }
     }
-  
+    
+
 }
