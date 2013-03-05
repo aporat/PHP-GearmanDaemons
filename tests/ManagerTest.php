@@ -1,12 +1,14 @@
 <?php
-use GearmanDaemons\Manager;
+use \GearmanDaemons\Manager;
+use \Zend\Log\Writer;
+use \Zend\Config;
 
 class GearmanDaemonsManagerTest extends PHPUnit_Framework_TestCase
 {
 	
     public function setUp()
     {
-        $config = new \Zend_Config(array(
+        $this->options = new \Zend\Config\Config(array(
             'recover_workers' => true,
             'servers' =>
              array (
@@ -14,8 +16,8 @@ class GearmanDaemonsManagerTest extends PHPUnit_Framework_TestCase
              )
         ));
         
-        $this->worker = new Manager($config);
-        $this->worker->getLogger()->addWriter(new \Zend_Log_Writer_Mock());
+        $this->worker = new Manager($this->options);
+        $this->worker->getLogger()->addWriter(new Writer\Mock());
     }
     
     

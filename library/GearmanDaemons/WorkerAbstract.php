@@ -1,6 +1,9 @@
 <?php
 namespace GearmanDaemons;
 
+use Zend\Log\Logger;
+use \Zend\Log\Writer;
+
 abstract class WorkerAbstract
 {
     /** 
@@ -14,9 +17,10 @@ abstract class WorkerAbstract
      * @var GearmanWorker
      */
     protected $_worker;
- 
+
     /**
-     * @var Zend_Log
+     *
+     * @var Logger
      */
     protected $_logger = null;
     
@@ -45,10 +49,9 @@ abstract class WorkerAbstract
      */
     public function __construct()
     {
-        $writer = new \Zend_Log_Writer_Stream('php://output');
-        
-        $this->_logger = new \Zend_Log($writer);
-        
+        $this->_logger = new Logger();
+        $this->_logger->addWriter(new Writer\Null());
+                
         $this->_start_time = time();
         
         $this->registerSigHandlers();
@@ -65,15 +68,6 @@ abstract class WorkerAbstract
     public function _init()
     {
         declare(ticks = 1);
-        
-        $application = new \Zend_Application(
-    		APPLICATION_ENV,
-    		APPLICATION_PATH . '/configs/application.ini'
-        );
-        
-        foreach (array('autoload', 'config', 'db') as $resource) {
-        	$application->bootstrap($resource);
-        }
                         
         return $this;
     }

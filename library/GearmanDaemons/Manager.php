@@ -1,6 +1,10 @@
 <?php
 namespace GearmanDaemons;
 
+use Zend\Log\Logger;
+use \Zend\Log\Writer;
+use \Zend\Config;
+
 /**
  * Base manager class.
  *
@@ -21,7 +25,7 @@ class Manager
 
     /**
      *
-     * @var Zend_Log
+     * @var Logger
      */
     protected $_logger = null;
 
@@ -76,14 +80,16 @@ class Manager
      */
     public function __construct ($spec)
     {
-        $this->_logger = new \Zend_Log(new \Zend_Log_Writer_Null());
+        $this->_logger = new Logger();
+        $this->_logger->addWriter(new Writer\Null());
+        
         $this->_start_time = time();
         
         $this->_registerSigHandlers();
         
         $this->_logger->info('Application\Gearman\Manager loaded');
         
-        if ($spec instanceof \Zend_Config) {
+        if ($spec instanceof \Zend\Config\Config) {
             $options = $spec->toArray();
         } elseif (is_array($spec)) {
             $options = $spec;
