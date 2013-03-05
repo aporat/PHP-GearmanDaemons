@@ -234,5 +234,14 @@ abstract class WorkerAbstract
         }
     }
     
+    /**
+     * return the zend logger object
+     *
+     * @return Logger
+     */
+    public function getLogger()
+    {
+        return $this->_logger;
+    }
     
 }

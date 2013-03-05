@@ -191,9 +191,9 @@ class Manager
     }
     
     /**
-     * return the zned logger object
+     * return the zend logger object
      * 
-     * @return \Zend_Log         
+     * @return Logger         
      */
     public function getLogger()
     {
