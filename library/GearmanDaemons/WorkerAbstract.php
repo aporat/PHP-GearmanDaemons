@@ -219,7 +219,7 @@ abstract class WorkerAbstract
         $this->_worker->addServer();
         $this->_worker->addOptions(GEARMAN_WORKER_NON_BLOCKING);
         
-        $this->_worker->addFunction($this->getRegisterFunction(), [$this, 'execute']);
+        $this->_worker->addFunction($this->getRegisterFunction(), array($this, 'execute'));
         
         while ($this->_worker->work()) {
             if ($this->_shutdown) {

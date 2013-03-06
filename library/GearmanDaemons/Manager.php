@@ -1,9 +1,12 @@
 <?php
+
 namespace GearmanDaemons;
 
 use Zend\Log\Logger;
 use \Zend\Log\Writer;
 use \Zend\Config\Config;
+use GearmanDaemons\Exception;
+use GearmanDaemons\Exception\InvalidArgumentException;
 
 /**
  * Base manager class.
@@ -97,7 +100,7 @@ class Manager
         
         // last minute error checking
         if ((!is_array($options))) {
-            throw new Exception('No valid params passed to constructor');
+            throw new InvalidArgumentException('No valid params passed to constructor');
         }
         
         $this->setOptions($options);
