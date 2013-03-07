@@ -2,7 +2,9 @@
 namespace GearmanDaemons;
 
 use Zend\Log\Logger;
-use \Zend\Log\Writer;
+use Zend\Log\Writer;
+use GearmanDaemons\Exception\RuntimeException;
+use GearmanDaemons\Exception\InvalidArgumentException;
 
 abstract class WorkerAbstract
 {
@@ -49,6 +51,18 @@ abstract class WorkerAbstract
      */
     public function __construct()
     {
+        if (!extension_loaded('gearman')) {
+            throw new RuntimeException('The PECL::gearman extension is required.');
+        }
+        
+        if (!extension_loaded('pcntl')) {
+            throw new RuntimeException('The php pcntl extension is required.');
+        }
+        
+        if (empty($this->_registerFunction)) {
+            throw new InvalidArgumentException(get_class($this) . ' must implement a registerFunction');
+        }
+        
         $this->_logger = new Logger();
         $this->_logger->addWriter(new Writer\Null());
                 
@@ -61,7 +75,7 @@ abstract class WorkerAbstract
     }
     
     /**
-     * init the application (zend)
+     * init the application
 
      * @return \WorkerAbstract
      */

@@ -17,7 +17,6 @@ class GearmanDaemonsManagerTest extends PHPUnit_Framework_TestCase
         ));
         
         $this->worker = new Manager($this->options);
-        $this->worker->getLogger()->addWriter(new Writer\Mock());
     }
     
     public function testConstruct()
@@ -37,6 +36,5 @@ class GearmanDaemonsManagerTest extends PHPUnit_Framework_TestCase
             $this->assertTrue(true);
         }
     }
-    
 
 }

@@ -5,7 +5,6 @@ namespace GearmanDaemons;
 use Zend\Log\Logger;
 use \Zend\Log\Writer;
 use \Zend\Config\Config;
-use GearmanDaemons\Exception;
 use GearmanDaemons\Exception\InvalidArgumentException;
 
 /**

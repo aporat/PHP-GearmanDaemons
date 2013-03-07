@@ -1,6 +1,8 @@
 PHP Gearman Daemons Manager [![Build Status](https://secure.travis-ci.org/aporat/PHP-GearmanDaemons.png)](http://travis-ci.org/aporat/PHP-GearmanDaemons)
 ===========================================
 
+The PHP Gearman Daemons Manager library allows running gearman workers as deamons using supervisord or using a built it php process manager. The library is framework independent and can be easily integrated into any project.
+
 
 ## Requirements ##
 
@@ -59,8 +61,12 @@ class Worker_DoPrint extends WorkerAbstract {
 
 ## Gearman/PHP Install (CentOS / AWS Linux AMI) ##
 
-        yum -y install gcc* boost-devel libevent-devel libuuid-devel
+        yum -y install gcc* mysql55-devel boost-devel libevent-devel libuuid-devel
         
+        wget https://launchpad.net/gearmand/1.2/1.1.4/+download/gearmand-1.1.4.tar.gz
+        tar zxvf gearmand-1.1.4.tar.gz 
+        cd gearmand-1.1.4 &&  ./configure && make && make install
+
         pecl install gearman
         echo "extension=gearman.so" >> /etc/php.ini
         
