@@ -245,6 +245,7 @@ class Manager
         } elseif ($pid === 0) {
             $worker->registerSigHandlers();
             $worker->prepare();
+            $worker->getLogger()->setWriters($this->_logger->getWriters());
             
             $worker->_start_time = time();
             $gearmanWorker = new \GearmanWorker();
