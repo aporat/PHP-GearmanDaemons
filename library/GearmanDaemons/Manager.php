@@ -255,10 +255,10 @@ class Manager
             $gearmanWorker->addOptions(GEARMAN_WORKER_NON_BLOCKING);
             
             $gearmanWorker->addFunction($worker->getRegisterFunction(), 
-                    [
+                    array(
                             $worker,
                             'execute'
-                    ]);
+                    ));
             
             while (true) {
                 if ($worker->_shutdown) {
