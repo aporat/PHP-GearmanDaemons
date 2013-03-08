@@ -1,3 +1,5 @@
+#!/bin/sh
+
 wget https://launchpad.net/gearmand/1.2/1.1.4/+download/gearmand-1.1.4.tar.gz
 tar -xzf gearmand-1.1.4.tar.gz 
 

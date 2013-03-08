@@ -4,7 +4,7 @@ php:
   - "5.4"
 
 before_install:
- - ./tests/install_dependencies.sh
+ - sudo ./tests/install_dependencies.sh
  - composer install --dev
  - phpenv rehash
 
