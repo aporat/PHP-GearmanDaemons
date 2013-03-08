@@ -16,7 +16,7 @@ class GearmanDaemonsManagerTest extends PHPUnit_Framework_TestCase
              )
         ));
         
-        $this->worker = new Manager($this->options);
+        $this->manager = new Manager($this->options);
     }
     
     public function testConstruct()
@@ -32,6 +32,17 @@ class GearmanDaemonsManagerTest extends PHPUnit_Framework_TestCase
         try {
             $manager = new Manager();
             $this->fail('should have thrown an exception bad queue var');
+        } catch (Exception $e) {
+            $this->assertTrue(true);
+        }
+    }
+    
+    
+    public function testAddInvalidWorker()
+    {
+        try {
+            $this->manager->registerWorker(new stdClass());
+            $this->fail('should have thrown an exception');
         } catch (Exception $e) {
             $this->assertTrue(true);
         }
