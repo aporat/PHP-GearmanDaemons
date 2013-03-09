@@ -16,6 +16,8 @@ use GearmanDaemons\Exception\InvalidArgumentException;
 class Manager
 {
 
+    const VERSION = '1.0.0';
+
     /**
      * User-provided configuration
      *
