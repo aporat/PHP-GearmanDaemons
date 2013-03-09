@@ -1,6 +1,9 @@
 #!/bin/sh
 
-sudo apt-get install libboost-all-dev libevent-devel libuuid-devel 
+sudo add-apt-repository ppa:gearman-developers/ppa 
+sudo apt-get update
+sudo apt-get install gearman-job-server libgearman-dev gearman-tools
+sudo apt-get install libevent-dev uuid-dev -y
 
 wget https://launchpad.net/gearmand/1.2/1.1.4/+download/gearmand-1.1.4.tar.gz
 tar -xzf gearmand-1.1.4.tar.gz 
