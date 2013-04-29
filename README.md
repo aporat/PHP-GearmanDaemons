@@ -1,4 +1,5 @@
-PHP Gearman Daemons Manager [![Build Status](https://travis-ci.org/aporat/PHP-GearmanDaemons.png?branch=master)](https://travis-ci.org/aporat/PHP-GearmanDaemons)
+PHP Gearman Daemons Manager [![Build Status](https://travis-ci.org/aporat/PHP-GearmanDaemons.png?branch=master)](https://travis-ci.org/aporat/PHP-GearmanDaemons) [![Dependencies Status](https://d2xishtp1ojlk0.cloudfront.net/d/8379135)](http://depending.in/aporat/PHP-GearmanDaemons) [![Coverage Status](https://coveralls.io/repos/aporat/Zend_Test_Controller_DatabaseTestCase/badge.png?branch=master)](https://coveralls.io/r/aporat/Zend_Test_Controller_DatabaseTestCase)
+
 ===========================================
 
 The PHP Gearman Daemons Manager library allows running gearman workers as deamons using supervisord or using a built it php process manager. The library is framework independent and can be easily integrated into any project.
