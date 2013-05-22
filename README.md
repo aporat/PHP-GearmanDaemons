@@ -60,7 +60,7 @@ class Worker_DoPrint extends WorkerAbstract {
 ```
        
 
-## Gearman/PHP Install (CentOS / AWS Linux AMI) ##
+## Gearman/PHP Install (CentOS / Amazon Linux AMI) ##
 
         yum -y install gcc* mysql55-devel boost-devel libevent-devel libuuid-devel
         
