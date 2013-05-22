@@ -3,11 +3,17 @@ php:
   - "5.3"
   - "5.4"
 
-before_install:
+before_script:
  - sh ./tests/install_dependencies.sh
- - composer install --dev
+- curl -s http://getcomposer.org/installer | php
+ - php composer.phar install --dev --no-interaction
  - phpenv rehash
 
 script:
- - cd tests/
- - ../vendor/bin/phpunit
+  - mkdir -p build/logs
+  - php vendor/bin/phpunit -c phpunit.xml.dist 
+
+after_script:
+  - php vendor/bin/coveralls
+  # or enable logging
+  - php vendor/bin/coveralls -v
