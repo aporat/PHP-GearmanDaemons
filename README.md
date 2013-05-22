@@ -1,4 +1,5 @@
-PHP Gearman Daemons Manager [![Build Status](https://travis-ci.org/aporat/PHP-GearmanDaemons.png?branch=master)](https://travis-ci.org/aporat/PHP-GearmanDaemons) [![Dependencies Status](https://d2xishtp1ojlk0.cloudfront.net/d/8379135)](http://depending.in/aporat/PHP-GearmanDaemons) [![Coverage Status](https://coveralls.io/repos/aporat/Zend_Test_Controller_DatabaseTestCase/badge.png?branch=master)](https://coveralls.io/r/aporat/Zend_Test_Controller_DatabaseTestCase)
+PHP Gearman Daemons Manager [![Build Status](https://travis-ci.org/aporat/PHP-GearmanDaemons.png?branch=master)](https://travis-ci.org/aporat/PHP-GearmanDaemons) [![Dependencies Status](https://d2xishtp1ojlk0.cloudfront.net/d/8379135)](http://depending.in/aporat/PHP-GearmanDaemons) [![Coverage Status](https://coveralls.io/repos/aporat/PHP-GearmanDaemons/badge.png)](https://coveralls.io/r/aporat/PHP-GearmanDaemons)
+
 
 ===========================================
 
