@@ -15,7 +15,7 @@ before_script:
   - phpenv rehash
 
 script:
-  - mkdir -p build/cov
+  - mkdir -p build/logs/coverage
   - php vendor/bin/phpunit -c phpunit.xml.dist 
 
 after_script:
