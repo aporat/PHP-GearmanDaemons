@@ -4,10 +4,10 @@ php:
   - "5.4"
 
 before_script:
- - sh ./tests/install_dependencies.sh
-- curl -s http://getcomposer.org/installer | php
- - php composer.phar install --dev --no-interaction
- - phpenv rehash
+  - sh ./tests/install_dependencies.sh
+  - curl -s http://getcomposer.org/installer | php
+  - php composer.phar install --dev --no-interaction
+  - phpenv rehash
 
 script:
   - mkdir -p build/logs
